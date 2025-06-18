@@ -47,6 +47,20 @@ module.exports = config({
           '50%': { opacity: 0.8 },
           '100%': { transform: 'scale(100%)', opacity: 0 },
         },
+        gradientMove: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        swirlGradient: {
+          '0%': { backgroundPosition: '50% 50%', transform: 'rotate(0deg)' },
+          '100%': { backgroundPosition: '50% 50%', transform: 'rotate(360deg)' },
+        },
+        gradientBG: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         'flash-code': 'flash-code 1s forwards',
@@ -56,6 +70,9 @@ module.exports = config({
         'marquee-vertical': 'marquee-vertical 180s linear infinite both',
         'pulse-radar': 'pulse-radar 3s linear infinite',
         'slide-in': 'slideIn 250ms ease-in both',
+        gradientMove: 'gradientMove 60s ease infinite',
+        swirlGradient: 'swirlGradient 60s linear infinite',
+        gradientBG: 'gradientBG 40s ease-in-out infinite',
       },
       transitionDelay: {
         1200: '1200ms',
