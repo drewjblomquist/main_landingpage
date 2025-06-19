@@ -143,7 +143,7 @@ const Testimonials = () => (
     className="w-full py-16 bg-[#0B1D3A] flex flex-col items-center"
   >
     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About</h2>
-    <p className="text-lg text-gray-200 mb-10 text-center max-w-2xl mx-auto">At Bloom Advisors, we help small and midsize businesses stay competitive in a world of rapid technological change. As larger companies are moving quickly to adopt AI, we make sure local businesses have the same chance to grow and compete.  Because our founders come from working in and around small business, we understand the deep impact these companies have on families, communities, and local economies. Our goal is to empower business owners with tailored systems, long term strategies, and the confidence to use emerging technologies. We focus on practical and scalable products that emowers your team, instead of replacing them.  Whether you're launching a new venture or looking to modernize your current business, we're here to help you grow it.</p>
+    <p className="text-lg text-gray-200 mb-10 text-center max-w-2xl mx-auto">At Bloom Advisory, we help small and midsize businesses stay competitive in a world of rapid technological change. As larger companies are moving quickly to adopt AI, we make sure local businesses have the same chance to grow and compete.  Because our founders come from working in and around small business, we understand the deep impact these companies have on families, communities, and local economies. Our goal is to empower business owners with tailored systems, long term strategies, and the confidence to use emerging technologies. We focus on practical and scalable products that emowers your team, instead of replacing them.  Whether you're launching a new venture or looking to modernize your current business, we're here to help you grow it.</p>
     <div className="flex flex-wrap gap-8 justify-center items-center">
       {/* TODO: Replace with real logos or testimonials */}
       <div className="w-40 h-16 bg-[#1D3A1D] rounded-2xl flex items-center justify-center text-white text-lg font-bold opacity-80">LOGO 1</div>
@@ -499,7 +499,7 @@ export default function Home() {
         )}
         {/* NAVBAR */}
         <nav className="w-full py-6 px-6 max-w-7xl mx-auto flex justify-between items-center">
-          <span className="text-4xl font-bold glass-logo-text" style={{ color: '#0B9444' }}>Bloom Advisory</span>
+          <span className="text-4xl font-bold" style={{ color: '#0B9444' }}>Bloom Advisory</span>
           <div className="flex gap-8 text-gray-100 text-lg">
             <a href="#about" className="hover:text-green-300 transition">About Us</a>
             <a href="#features" className="hover:text-green-300 transition">Features</a>
@@ -557,7 +557,7 @@ export default function Home() {
         >
           <div className="max-w-4xl w-full bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-12 text-center shadow-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About</h2>
-            <p className="text-lg text-gray-200 mb-2 max-w-2xl mx-auto">At Bloom Advisors, we help small and midsize businesses stay competitive in a world of rapid technological change. As larger companies are moving quickly to adopt AI, we make sure local businesses have the same chance to grow and compete.  Because our founders come from working in and around small business, we understand the deep impact these companies have on families, communities, and local economies. Our goal is to empower business owners with tailored systems, long term strategies, and the confidence to use emerging technologies. We focus on practical and scalable products that emowers your team, instead of replacing them.  Whether you're launching a new venture or looking to modernize your current business, we're here to help you grow it.</p>
+            <p className="text-lg text-gray-200 mb-2 max-w-2xl mx-auto">At Bloom Advisory, we help small and midsize businesses stay competitive in a world of rapid technological change. As larger companies are moving quickly to adopt AI, we make sure local businesses have the same chance to grow and compete.  Because our founders come from working in and around small business, we understand the deep impact these companies have on families, communities, and local economies. Our goal is to empower business owners with tailored systems, long term strategies, and the confidence to use emerging technologies. We focus on practical and scalable products that emowers your team, instead of replacing them.  Whether you're launching a new venture or looking to modernize your current business, we're here to help you grow it.</p>
           </div>
         </motion.section>
 
@@ -566,6 +566,31 @@ export default function Home() {
 
         {/* FOOTER */}
         <Footer />
+
+        {/* Admin Button */}
+        <a
+          href="/admin"
+          style={{
+            position: 'fixed',
+            bottom: 24,
+            right: 24,
+            zIndex: 100,
+            background: '#0B1D3A',
+            color: 'white',
+            borderRadius: '999px',
+            padding: '8px 20px',
+            fontSize: 14,
+            fontWeight: 600,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+            opacity: 0.7,
+            transition: 'opacity 0.2s',
+            textDecoration: 'none',
+          }}
+          onMouseOver={e => (e.currentTarget.style.opacity = '1')}
+          onMouseOut={e => (e.currentTarget.style.opacity = '0.7')}
+        >
+          Admin
+        </a>
 
         {/* Update global style for professional matte grassy logo effect */}
         <style jsx global>{`
