@@ -62,44 +62,48 @@ export default function AdminDashboardPage() {
     }
   }
 
-  if (loading) return <div style={{ padding: 32 }}>Loading sections...</div>;
-  if (error) return <div style={{ color: 'red', padding: 32 }}>{error}</div>;
+  if (loading) return <div className="text-white text-center p-8">Loading sections...</div>;
+  if (error) return <div className="text-red-500 text-center p-8">{error}</div>;
 
   return (
-    <div style={{ padding: '2rem', maxWidth: 800, margin: '2rem auto' }}>
-      <h1>Admin Dashboard</h1>
+    <div className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Admin Dashboard</h1>
       {sections.map((section) => (
-        <div key={section.id} style={{ border: '1px solid #ccc', borderRadius: 8, padding: 16, marginBottom: 24 }}>
-          <div style={{ fontWeight: 'bold', marginBottom: 8 }}>{section.name}</div>
-          <label style={{ display: 'block', marginBottom: 4 }}>Text Content:</label>
+        <div key={section.id} className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 shadow-2xl mb-8">
+          <div className="text-2xl font-bold text-white mb-4 capitalize">{section.name}</div>
+          
+          <label className="block text-white mb-2 text-lg font-medium">Text Content:</label>
           <textarea
             value={section.content || ''}
             onChange={e => setSections(sections => sections.map(s => s.id === section.id ? { ...s, content: e.target.value } : s))}
-            rows={3}
-            style={{ width: '100%', marginBottom: 8 }}
+            rows={4}
+            className="w-full p-3 rounded-2xl bg-[#c8cacc] text-[#0a0e14] border-none focus:ring-2 focus:ring-green-700 focus:outline-none mb-4"
           />
-          <label style={{ display: 'block', marginBottom: 4 }}>Image URL:</label>
+          
+          <label className="block text-white mb-2 text-lg font-medium">Image URL:</label>
           <input
             type="text"
             value={section.image_url || ''}
             onChange={e => setSections(sections => sections.map(s => s.id === section.id ? { ...s, image_url: e.target.value } : s))}
-            style={{ width: '100%', marginBottom: 8 }}
+            className="w-full p-3 rounded-2xl bg-[#c8cacc] text-[#0a0e14] border-none focus:ring-2 focus:ring-green-700 focus:outline-none mb-4"
           />
-          <label style={{ display: 'block', marginBottom: 4 }}>
+          
+          <label className="flex items-center gap-2 text-[#c8cacc] text-lg">
             <input
               type="checkbox"
               checked={section.visible}
               onChange={e => setSections(sections => sections.map(s => s.id === section.id ? { ...s, visible: e.target.checked } : s))}
-              style={{ marginRight: 8 }}
+              className="accent-green-700 w-5 h-5 rounded"
             />
             Show this section
           </label>
+          
           <button
             onClick={() => saveSection(section)}
             disabled={saving}
-            style={{ marginTop: 8, padding: '8px 16px', fontWeight: 'bold' }}
+            className="w-full py-3 px-6 rounded-2xl font-bold text-white text-lg mt-6 bg-[#1D3A1D] hover:bg-green-900 transition disabled:opacity-50"
           >
-            {saving ? 'Saving...' : 'Save'}
+            {saving ? 'Saving...' : 'Save Section'}
           </button>
         </div>
       ))}

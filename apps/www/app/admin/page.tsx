@@ -19,26 +19,39 @@ export default function AdminPage() {
   };
 
   return (
-    <div style={{ padding: '2rem', maxWidth: 400, margin: '4rem auto' }}>
-      <h1>Admin Login</h1>
-      <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          style={{ padding: 8, fontSize: 16 }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          style={{ padding: 8, fontSize: 16 }}
-        />
-        <button type="submit" style={{ padding: 10, fontSize: 16, fontWeight: 'bold' }}>Login</button>
-        {error && <div style={{ color: 'red', marginTop: 8 }}>{error}</div>}
-      </form>
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="max-w-md w-full mx-auto p-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl">
+        <h1 className="text-3xl font-bold text-white mb-6 text-center">Admin Login</h1>
+        <form onSubmit={handleLogin} className="flex flex-col gap-6">
+          <div>
+            <label className="block text-white mb-2 text-lg font-medium">Username</label>
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full p-3 rounded-2xl bg-[#c8cacc] text-[#0a0e14] border-none focus:ring-2 focus:ring-green-700 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label className="block text-white mb-2 text-lg font-medium">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 rounded-2xl bg-[#c8cacc] text-[#0a0e14] border-none focus:ring-2 focus:ring-green-700 focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-3 px-6 rounded-2xl font-bold text-white text-lg mt-4 bg-[#1D3A1D] hover:bg-green-900 transition"
+          >
+            Login
+          </button>
+          {error && <div className="text-red-400 mt-4 text-center">{error}</div>}
+        </form>
+      </div>
     </div>
   );
 } 
